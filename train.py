@@ -86,7 +86,7 @@ def train(args=get_args()):
     writer.add_text("args", str(args))
     logger = Logger(writer=writer,log_path=log_path)
 
-    Devid = 0 if args.device == 'cuda' else -1
+    Devid = 1 if args.device == 'cuda' else -1
     set_device_and_logger(Devid,logger)
 
     # import configs
