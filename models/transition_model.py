@@ -184,7 +184,7 @@ class TransitionModel:
         train_mse_loss = torch.sum(train_mse_losses)
         train_var_loss = torch.sum(train_var_losses)
         train_val_loss = torch.sum(V_loss)
-        train_transition_loss = train_mse_loss + train_var_loss + 0.55 * train_val_loss
+        train_transition_loss = train_mse_loss + train_var_loss + 0.45 * train_val_loss
         train_transition_loss += 0.01 * torch.sum(self.model.max_logvar) - 0.01 * torch.sum(self.model.min_logvar)  # why
         if self.use_weight_decay:
             decay_loss = self.model.get_decay_loss()
